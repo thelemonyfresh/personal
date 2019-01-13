@@ -115,7 +115,7 @@
          "* %U ")
         ("c" "code scratch" entry (file+headline "~/org/code.org" "code#scratch")
          "* %U ")
-       pp ("m" "music scratch" entry (file+headline "~/org/music.org" "music#scratch")
+        ("m" "music scratch" entry (file+headline "~/org/music.org" "music#scratch")
          "* %U ")
         ("r" "research scratch" entry (file+headline "~/org/research.org" "research#scratch")
          "* %U ")
@@ -149,6 +149,9 @@
 
 ;; rubocop
 (require 'rubocop)
+(require 'rubocopfmt)
+(add-hook 'ruby-mode-hook 'rubocopfmt-mode) ;; hook into ruby mode
+(setq rubocopfmt-use-bundler-when-possible nil) ;; don't require rubocop in bundle
 
 ;; multiple cursor mode https://github.com/magnars/multiple-cursors.el
 (require 'multiple-cursors)
@@ -158,4 +161,4 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; react mode, rjsx major mode
-(add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
+(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
