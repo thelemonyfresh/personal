@@ -124,18 +124,18 @@
       )
 ;; set shortcuts to org files
 (global-set-key (kbd "C-c M-o s")
-                (lambda () (interactive) (find-file "~/org/sciex.org")))
+                (lambda () (interactive) (find-file "~/src/org/sciex.org")))
 (global-set-key (kbd "C-c M-o p")
-                (lambda () (interactive) (find-file "~/org/personal.org")))
+                (lambda () (interactive) (find-file "~/src/org/personal.org")))
 (global-set-key (kbd "C-c M-o c")
-                (lambda () (interactive) (find-file "~/org/code.org")))
+                (lambda () (interactive) (find-file "~/src/org/code.org")))
 (global-set-key (kbd "C-c M-o w")
-                (lambda () (interactive) (find-file "~/org/work.org")))
+                (lambda () (interactive) (find-file "~/src/org/work.org")))
 (global-set-key (kbd "C-c M-o r")
-                (lambda () (interactive) (find-file "~/org/research.org")))
+                (lambda () (interactive) (find-file "~/src/org/research.org")))
 (global-set-key (kbd "C-c M-o m")
-                (lambda () (interactive) (find-file "~/org/music.org")))
-
+                (lambda () (interactive) (find-file "~/src/org/music.org")))
+p
 ;; set company mode from being so annoying
 (setq company-idle-delay 2)
 
