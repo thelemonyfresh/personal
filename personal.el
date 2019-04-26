@@ -67,7 +67,7 @@
 ;; configure highlight-indent-guides mode
 ;;  https://github.com/DarthFennec/highlight-indent-guides
 (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
-(setq highlight-indent-guides-method 'character)
+(setq highlight-indent-guides-method 'fill)
 
 ;; Set up sonic_pi.el (https://github.com/repl-electric/sonic-pi.el)
 ;;(add-to-list 'load-path "~/.sonic-pi.el/")
@@ -135,7 +135,7 @@
                 (lambda () (interactive) (find-file "~/src/org/research.org")))
 (global-set-key (kbd "C-c M-o m")
                 (lambda () (interactive) (find-file "~/src/org/music.org")))
-p
+
 ;; set company mode from being so annoying
 (setq company-idle-delay 2)
 
