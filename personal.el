@@ -70,13 +70,12 @@
 (setq highlight-indent-guides-method 'character)
 
 ;; Set up sonic_pi.el (https://github.com/repl-electric/sonic-pi.el)
-(add-to-list 'load-path "~/.sonic-pi.el/")
-(require 'sonic-pi)
-(setq sonic-pi-path "/Users/daniel/src/sonicpi/sonic-pi/app/") ; Must end with "/"
+;;(add-to-list 'load-path "~/.sonic-pi.el/")
+;;(setq sonic-pi-path "/Users/daniel/src/sonicpi/sonic-pi/app/") ; Must end with "/"
 ;; Optionally define a hook
-(add-hook 'sonic-pi-mode-hook
-          (lambda ()
-            (define-key ruby-mode-map "\C-c\C-b" 'sonic-pi-stop-all)))
+;; (add-hook 'sonic-pi-mode-hook
+;;           (lambda ()
+;;             (define-key ruby-mode-map "\C-c\C-b" 'sonic-pi-stop-all)))
 
 ;; https://github.com/stsquad/emacs_chrome
 ;; (require 'edit-server)
