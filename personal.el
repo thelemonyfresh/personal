@@ -161,3 +161,6 @@
 
 ;; react mode, rjsx major mode
 (add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
+
+;; Swiper use fancy colors http://pragmaticemacs.com/emacs/dont-search-swipe/
+(setq ivy-display-style 'fancy)
