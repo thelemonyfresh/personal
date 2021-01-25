@@ -108,18 +108,21 @@
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-capture-templates
       '(
-        ("s" "sciex scratch" entry (file+headline "~/org/sciex.org" "sciex#scratch")
+        ("p" "personal" entry (file+headline "~/org/personal.org" "personal#scratch")
          "* %U ")
-        ("p" "personal scratch" entry (file+headline "~/org/personal.org" "personal#scratch")
+        ("c" "code" entry (file+headline "~/org/code.org" "code#scratch")
          "* %U ")
-        ("c" "code scratch" entry (file+headline "~/org/code.org" "code#scratch")
+        ("m" "music" entry (file+headline "~/org/music.org" "music#scratch")
          "* %U ")
-        ("m" "music scratch" entry (file+headline "~/org/music.org" "music#scratch")
+        ("r" "research" entry (file+headline "~/org/research.org" "research#scratch")
          "* %U ")
-        ("r" "research scratch" entry (file+headline "~/org/research.org" "research#scratch")
+        ("w" "work" entry (file+headline "~/org/work.org" "work#scratch")
          "* %U ")
-        ("w" "work scratch" entry (file+headline "~/org/work.org" "work#scratch")
-         "* %U ")
+        ("g" "Cookbook" entry (file "~/src/org/cookbook.org")
+         "%(org-chef-get-recipe-from-url)"
+         :empty-lines 1)
+        ("f" "Manual Cookbook" entry (file "~/src/org/cookbook.org")
+         "* %^{Recipe title: }\n  :PROPERTIES:\n  :source-url:\n  :servings:\n  :prep-time:\n  :cook-time:\n  :ready-in:\n  :END:\n** Ingredients\n   %?\n** Directions\n\n")
         )
       )
 ;; set shortcuts to org files
@@ -135,6 +138,10 @@
                 (lambda () (interactive) (find-file "~/src/org/research.org")))
 (global-set-key (kbd "C-c M-o m")
                 (lambda () (interactive) (find-file "~/src/org/music.org")))
+
+;; org TODO state workflows
+(setq org-todo-keywords
+      '((sequence "TODO" "BLOCKED" "|" "DONE")))
 
 ;; set company mode from being so annoying
 (setq company-idle-delay 2)
@@ -164,3 +171,6 @@
 
 ;; Swiper use fancy colors http://pragmaticemacs.com/emacs/dont-search-swipe/
 (setq ivy-display-style 'fancy)
+
+;; org chef mode https://github.com/Chobbes/org-chef
+(require 'org-chef)
